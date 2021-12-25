@@ -1,0 +1,26 @@
+#g++.exe -Wall -std=c++20 -fexceptions -O2 -Iinclude -c Y:\Codeblocks\Map_Exchange_String_Decoder\base64.cpp -o obj\Release\base64.o
+#g++.exe -Wall -std=c++20 -fexceptions -O2 -Iinclude -c Y:\Codeblocks\Map_Exchange_String_Decoder\main.cpp -o obj\Release\main.o
+#g++.exe -Wall -std=c++20 -fexceptions -O2 -Iinclude -c Y:\Codeblocks\Map_Exchange_String_Decoder\Parser.cpp -o obj\Release\Parser.o
+#g++.exe  -o bin\Release\Map_Exchange_String_Decoder.exe obj\Release\base64.o obj\Release\main.o obj\Release\Parser.o  -s  -lz
+
+#make -f makefile.gcc clear
+#make -f makefile.gcc
+
+CC=g++.exe
+CFLAGS=-Wall -std=c++20 -fexceptions -O2 -c
+LDFLAGS=-s -static-libstdc++ -static-libgcc -static -lz
+SOURCES=base64.cpp Parser.cpp main.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+EXECUTABLE=Map_Exchange_String_Decoder.exe
+
+
+all: $(SOURCES) $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) -o $@ $(OBJECTS) $(LDFLAGS)
+
+.cpp.o:
+	$(CC) $(CFLAGS) $< -o $@	
+	
+clear:
+	rm -rf *.o Map_Exchange_String_Decoder.exe
