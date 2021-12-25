@@ -19,3 +19,7 @@ Factorio Map Exchange String Decoder (C++).
       cd "A:/some kind of folder/source_directory"
       make -f makefile.gcc clear
       make -f makefile.gcc
+
+### Thanks
+I deeply appreciate the help of the following people.
+- [Hornwitser](https://gist.github.com/Hornwitser/f291638024e7e3c0271b1f3a4723e05a#file-exchange_string_decoder-js) 
